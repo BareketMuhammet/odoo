@@ -5,7 +5,8 @@
 {
     'name': 'Hospital Management',
     'version': '1.0.0',
-    'category': '',
+    'category': 'Hospital',
+    'author': 'Muhammet Bareket',
     'summary': '',
     'description': "",
     'depends': [],
