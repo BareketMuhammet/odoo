@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hospital_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <h1>No data yet!</h1>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_patient"
+            name="Patient"
+            action="hospital_patient_action"
+            parent="menu_patient_master"
+            sequence="0"
+    />
+
+
+    <record id="view_hospital_patient_form" model="ir.ui.view">
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="ref"/>
+                            <field name="id"/>
+                        </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="active" invisible='1'/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_list" model="ir.ui.view">
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Patient Name"/>
+                <field name="ref"/>
+                <field name="id"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hospital_patient_search" model="ir.ui.view">
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="age" string="Domain    "
+                       filter_domain="['|', '|', ('name', 'ilike', self), ('ref', 'ilike', self), ('age', 'ilike', self)]"/>
+                <filter name="by_age" string="Older" domain="[('age', '>', 40)]"/>
+                <separator/>
+                <filter name="male" string="Male" domain="[('gender', '=', 'male')]"/>
+                <group expand="1" string="Group By">
+                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
+                    <separator/>
+                    <filter string="Age" name="group_by_age" context="{'group_by': 'age'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
