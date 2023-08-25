@@ -10,12 +10,30 @@
         </field>
     </record>
 
+    <record id="hospital_patient_female_action" model="ir.actions.act_window">
+        <field name="name">Patient</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('gender', '=', 'female')]</field>
+        <field name="help" type="html">
+            <h1>No data yet!</h1>
+        </field>
+    </record>
+
     <menuitem
             id="menu_patient"
             name="Patient"
             action="hospital_patient_action"
             parent="menu_patient_master"
             sequence="0"
+    />
+    <menuitem
+            id="menu_female_patient"
+            name="Female Patient"
+            action="hospital_patient_female_action"
+            parent="menu_patient_master"
+            sequence="1"
     />
 
 
