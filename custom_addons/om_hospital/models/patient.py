@@ -7,8 +7,7 @@ class HospitalPatient(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(string="Name", tracking=True)
-    ref = fields.Char(string="Reference")
     age = fields.Integer(string="Age")
-    id = fields.Integer(string="Id")
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string='Gender')
+    ref = fields.Char(string="Reference")
     active = fields.Boolean(string="Active", default=True)
