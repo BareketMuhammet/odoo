@@ -12,9 +12,9 @@ class HospitalAppointment(models.Model):
     gender = fields.Selection(string='Gender', related="patient.gender", readonly=True)
     ref = fields.Char(string='Reference')
     appointment_date = fields.Datetime(string='Appointment Date', default=datetime.datetime.now())
+    prescription = fields.Html(string='Prescription')
 
     @api.onchange('patient')
     def onchange_patient(self):
         for rec in self:
             rec.ref = rec.patient.ref
-

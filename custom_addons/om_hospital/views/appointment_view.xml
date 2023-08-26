@@ -36,6 +36,32 @@
                         <group>
                         </group>
                     </group>
+
+                    <notebook>
+                        <page string="Page1" name="page1">
+                            <group>
+                                <field name="ref"/>
+                                <field name="appointment_date"/>
+
+                            </group>
+                        </page>
+                        <page string="Page2" name="page2">
+                            <group>
+                                <field name="appointment_date"/>
+                                <field name="ref"/>
+                            </group>
+                        </page>
+                        <page string="Page3" name="page3">
+                            <group>
+                                <field name="ref"/>
+                                <field name="appointment_date"/>
+                                <field name="prescription"/>
+
+                            </group>
+
+                        </page>
+                    </notebook>
+
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
