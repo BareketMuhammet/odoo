@@ -50,6 +50,7 @@
                             <field name="id"/>
                         </group>
                         <group>
+                            <field name="birth_day"/>
                             <field name="age"/>
                             <field name="gender"/>
                             <field name="active" invisible='1'/>
@@ -73,6 +74,7 @@
                 <field name="name" string="Patient Name"/>
                 <field name="ref"/>
                 <field name="id"/>
+                <field name="birth_day"/>
                 <field name="age"/>
                 <field name="gender"/>
             </tree>
@@ -85,13 +87,13 @@
             <search>
                 <field name="age" string="Domain    "
                        filter_domain="['|', '|', ('name', 'ilike', self), ('ref', 'ilike', self), ('age', 'ilike', self)]"/>
-                <filter name="older" string="Older" domain="[('age', '>', 40)]"/>
-                <separator/>
+<!--                <filter name="older" string="Older" domain="[('age', '>', 40)]"/>-->
+<!--                <separator/>-->
                 <filter name="male" string="Male" domain="[('gender', '=', 'male')]"/>
                 <group expand="1" string="Group By">
                     <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
-                    <separator/>
-                    <filter string="Age" name="group_by_age" context="{'group_by': 'age'}"/>
+<!--                    <separator/>-->
+<!--                    <filter string="Age" name="group_by_age" context="{'group_by': 'age'}"/>-->
                 </group>
                 <searchpanel>
                     <field name="gender" enable_counters="1"/>

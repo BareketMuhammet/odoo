@@ -8,4 +8,5 @@ class HospitalAppointment(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     patient = fields.Many2one('hospital.patient', string='Patient')
+    gender = fields.Selection(string='Gender', related="patient.gender", readonly=True)
     appointment_date = fields.Datetime(string='Appointment Date', default=datetime.datetime.now())
