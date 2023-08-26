@@ -6,6 +6,7 @@ class HospitalAppointment(models.Model):
     _name = "hospital.appointment"
     _description = "Hospital Appointment"
     _inherit = ['mail.thread', 'mail.activity.mixin']
+    _rec_name = 'patient'
 
     patient = fields.Many2one('hospital.patient', string='Patient')
     gender = fields.Selection(string='Gender', related="patient.gender", readonly=True)
