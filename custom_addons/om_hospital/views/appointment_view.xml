@@ -31,6 +31,7 @@
                             <field name="patient"/>
                             <field name="gender"/>
                             <field name="appointment_date"/>
+                            <field name="ref"/>
                         </group>
                         <group>
                         </group>
@@ -53,6 +54,7 @@
                 <field name="patient"/>
                 <field name="gender"/>
                 <field name="appointment_date"/>
+                <field name="ref"/>
             </tree>
         </field>
     </record>
