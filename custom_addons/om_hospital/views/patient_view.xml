@@ -93,6 +93,9 @@
                     <separator/>
                     <filter string="Age" name="group_by_age" context="{'group_by': 'age'}"/>
                 </group>
+                <searchpanel>
+                    <field name="gender" enable_counters="1"/>
+                </searchpanel>
             </search>
         </field>
     </record>
