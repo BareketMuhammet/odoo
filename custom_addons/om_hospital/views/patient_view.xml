@@ -37,7 +37,7 @@
             sequence="1"
     />
 
-
+    <!--Form-->
     <record id="view_hospital_patient_form" model="ir.ui.view">
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
@@ -56,10 +56,16 @@
                         </group>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
 
+    <!--    Tree-->
     <record id="view_hospital_patient_list" model="ir.ui.view">
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
@@ -72,7 +78,7 @@
             </tree>
         </field>
     </record>
-
+    <!--Search-->
     <record id="view_hospital_patient_search" model="ir.ui.view">
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">

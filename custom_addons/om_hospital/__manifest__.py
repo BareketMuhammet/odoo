@@ -5,7 +5,7 @@
     'author': 'Muhammet Bareket',
     'summary': '',
     'description': "",
-    'depends': [],
+    'depends': ['mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
