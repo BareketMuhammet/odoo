@@ -27,7 +27,7 @@
             <form>
                 <sheet>
                     <header>
-                        <field help="bla bla bla" name="status" widget="statusbar" options="{'clickable': '1'}" statusbar_visible="progress,done"/>
+                        <field help="bla bla bla" name="status" widget="statusbar" options="{'clickable': '1'}"/>
                     </header>
                     <group>
                         <field name="priority" widget="priority"/>
@@ -87,9 +87,11 @@
         <field name="arch" type="xml">
             <tree create="0" delete="0">
                 <field name="patient"/>
-                <field name="gender"/>
+                <field name="gender" optional="hide"/>
                 <field name="appointment_date"/>
                 <field name="ref"/>
+                <field name="activity_ids" widget="list_activity"/>
+                <field name="status" widget="badge"  decoration-success="status == 'done'" decoration-danger="status == 'canceled'"/>
             </tree>
         </field>
     </record>
