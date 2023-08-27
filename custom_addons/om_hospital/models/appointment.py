@@ -13,6 +13,7 @@ class HospitalAppointment(models.Model):
     ref = fields.Char(string='Reference')
     appointment_date = fields.Datetime(string='Appointment Date', default=datetime.datetime.now())
     prescription = fields.Html(string='Prescription')
+    doctor_id = fields.Many2one('res.users', string="Doctor")
     priority = fields.Selection([('0', 'Normal'), ('1', 'Low'), ('2', 'High'), ('3', 'Very High')], string='Priority')
     status = fields.Selection([('progress', 'In Progress'), ('done', 'Done'), ('canceled', 'Canceled')], string='Status', default='progress', required=True)
 
