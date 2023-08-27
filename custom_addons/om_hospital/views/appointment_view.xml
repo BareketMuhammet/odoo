@@ -24,14 +24,23 @@
     <record id="view_hospital_appointment_form" model="ir.ui.view">
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <form create="0" edit="0" delete="0">
+            <form>
                 <sheet>
+                    <header>
+                        <field help="bla bla bla" name="status" widget="statusbar" options="{'clickable': '1'}" statusbar_visible="progress,done"/>
+                    </header>
+                    <group>
+                        <field name="priority" widget="priority"/>
+                    </group>
+
                     <group>
                         <group>
                             <field name="patient"/>
                             <field name="gender"/>
                             <field name="appointment_date"/>
                             <field name="ref"/>
+                            <button name="object_action_test" string="Object" type="object" class="oe_highlight" confirm="bla bla bla ?"/>
+                            <button name="%(om_hospital.hospital_patient_action)d" string="Action" type="action" class="oe_highlight" confirm="bla bla bla ?"/>
                         </group>
                         <group>
                         </group>
